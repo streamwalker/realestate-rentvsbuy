@@ -9,16 +9,17 @@ interface PageHeadProps {
   path: string;
   jsonLd?: object | object[];
   breadcrumbs?: Array<{ name: string; path: string }>;
+  noIndex?: boolean;
   children?: ReactNode;
 }
 
-export const PageHead = ({ title, description, path, jsonLd = [], breadcrumbs, children }: PageHeadProps) => {
+export const PageHead = ({ title, description, path, jsonLd = [], breadcrumbs, noIndex, children }: PageHeadProps) => {
   const ldArray = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
   const all: object[] = [websiteSchema, realEstateAgentSchema, speakableSchema, ...ldArray];
   if (breadcrumbs && breadcrumbs.length > 0) all.push(breadcrumbSchema(breadcrumbs));
   return (
     <>
-      <SEO title={title} description={description} path={path} jsonLd={all} />
+      <SEO title={title} description={description} path={path} jsonLd={all} noIndex={noIndex} />
       {children}
     </>
   );
