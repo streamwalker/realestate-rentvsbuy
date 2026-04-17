@@ -16,6 +16,9 @@ import Contact from "./pages/Contact";
 import ThankYou from "./pages/ThankYou";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import TrecDisclosures from "./pages/TrecDisclosures";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +55,11 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/thank-you" element={<ThankYou />} />
+
+              {/* Legal */}
+              <Route path="/trec-disclosures" element={<TrecDisclosures />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
 
               <Route path="*" element={<NotFound />} />
             </Routes>

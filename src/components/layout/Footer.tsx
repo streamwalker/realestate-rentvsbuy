@@ -62,13 +62,16 @@ export const Footer = () => {
               <span className="grid h-5 w-5 place-items-center rounded-sm border border-cream/40 text-[10px]">⌂</span>
               Equal Housing Opportunity
             </span>
+            <Link to="/trec-disclosures" className="hover:text-gold">TREC Disclosures</Link>
+            <Link to="/privacy-policy" className="hover:text-gold">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-gold">Terms of Service</Link>
             <a href="https://www.trec.texas.gov/sites/default/files/pdf-forms/CN%201-3.pdf"
               target="_blank" rel="noopener noreferrer" className="hover:text-gold">
-              TREC Consumer Notice
+              TREC Consumer Notice (PDF)
             </a>
             <a href="https://www.trec.texas.gov/sites/default/files/pdf-forms/IABS%201-0.pdf"
               target="_blank" rel="noopener noreferrer" className="hover:text-gold">
-              Information About Brokerage Services
+              IABS (PDF)
             </a>
           </div>
           <div>© {new Date().getFullYear()} {EMILY.name} | {SITE.domain}</div>
