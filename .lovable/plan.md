@@ -1,55 +1,28 @@
 
-Two tasks. Both are additive — no breaking changes to existing routes or assets.
+Looking at the current footer, the TREC Consumer Notice (CN) and IABS PDF links are already present side-by-side in the legal row. So task 1 is mostly already done — I'll just tighten the visual grouping so they read clearly as the two required disclosures, and keep the Alamo City Designs link as a separate "more info" item.
 
-## 1. Legal pages + dedicated OG images
+For task 2, the EHO mark already exists as a small unicode glyph (`⌂`) in a bordered box. I'll upgrade it to a proper inline SVG, and add a Realtor® "R" mark SVG next to it. Using inline SVG (rather than generated raster logos) keeps the footer crisp at all sizes, avoids trademark color-shift issues, and doesn't bloat the bundle.
 
-**New pages** (in `src/pages/`):
-- `TrecDisclosures.tsx` — Renders the two TREC documents as branded landing sections with summary text + prominent links to the official TREC PDFs (Consumer Notice, IABS). Same PDFs already linked from `Footer.tsx`. Includes Texas brokerage license info placeholder.
-- `PrivacyPolicy.tsx` — Standard privacy policy covering: data collected via `LeadForm`, lead-submission edge function, analytics, cookies, third-party services (Supabase, Calendly), user rights, contact email.
-- `TermsOfService.tsx` — Standard ToS: site purpose (informational, not financial advice — matches existing footer disclaimer), no agency relationship until signed agreement, intellectual property, limitation of liability, governing law (Texas), contact.
+## Changes
 
-All three use the existing `PageHead` + `SiteLayout` pattern, with brand-consistent typography (font-serif headings, navy/gold accents) and a simple prose layout.
+**`src/components/layout/Footer.tsx`** — only file touched.
 
-**Routes** (in `src/App.tsx`):
-- `/trec-disclosures`
-- `/privacy-policy`
-- `/terms-of-service`
+1. **Compliance logo row** (new, sits above the existing legal links row, inside the same bottom border block):
+   - Inline SVG **Equal Housing Opportunity** mark (house outline + `=` bars), sized ~28px, with `aria-label="Equal Housing Opportunity"` and visible "Equal Housing Opportunity" text label.
+   - Inline SVG **Realtor®** mark (block "R" in a rounded square), sized ~28px, with `aria-label="REALTOR®"` and visible "REALTOR®" text label.
+   - TREC regulatory text snippet next to the marks: "Licensed by the Texas Real Estate Commission" (standard compliance phrasing).
 
-**Footer link updates** (`src/components/layout/Footer.tsx`):
-- Add a fourth column row or expand existing legal row with internal links to the three new pages alongside the existing TREC PDF links.
+2. **Disclosure links row** (refined):
+   - Group the two required TREC PDFs together with a small "Required disclosures:" label so it's visually obvious they're the mandated pair:
+     - **TREC Consumer Protection Notice (CN 1-3) [PDF]** — already linked, just relabel from "TREC Consumer Notice (PDF)" to the official name.
+     - **Information About Brokerage Services (IABS 1-0) [PDF]** — already linked, relabel from "IABS (PDF)" to the official name.
+   - Keep "TREC Info (Alamo City Designs)" as a separate supplementary link.
+   - Keep existing internal links to `/trec-disclosures`, `/privacy-policy`, `/terms-of-service`.
 
-**OG images** (1200×630, written to `public/`):
-- `og-trec.jpg` — "TREC Disclosures" title, navy bg, gold accent, small Equal Housing Opportunity icon, Emily wordmark.
-- `og-privacy.jpg` — "Privacy Policy" title, same brand template.
-- `og-terms.jpg` — "Terms of Service" title, same brand template.
+3. **Remove** the old inline `⌂` glyph EHO marker (replaced by the proper SVG above).
 
-Generated via `/tmp/lovable_ai.py --image --model google/gemini-3-pro-image-preview` (text rendering quality matters for legal page titles). Each page passes its OG image into `PageHead` (already supports `image` prop from previous task).
-
-## 2. Landscape iOS splash screens
-
-Generate landscape variants for the same 10 device sizes already shipped in portrait, written to `public/splash/`:
-
-- `iphone-8-landscape.png` (1334×750)
-- `iphone-x-landscape.png` (1792×828)
-- `iphone-xr-landscape.png` (1792×828)
-- `iphone-13-landscape.png` (1334×750) — actually 1792×828 for newer; will use correct per-device dims
-- `iphone-12-pro-max-landscape.png` (2778×1284)
-- `iphone-15-pro-landscape.png` (2556×1179)
-- `iphone-15-pro-max-landscape.png` (2796×1290)
-- `ipad-air-landscape.png` (2360×1640)
-- `ipad-pro-11-landscape.png` (2388×1668)
-- `ipad-pro-12-landscape.png` (2732×2048)
-
-**Generation approach**: Create one wide landscape master at high res (Emily portrait left-of-center, "Rent vs Buy House" wordmark right, navy bg + gold ring), then resize/crop with ImageMagick to each device dimension — same pipeline used for portrait splashes.
-
-**index.html**: Add 10 new `<link rel="apple-touch-startup-image">` tags with `media` queries that include `(orientation: landscape)` for each device, leaving the existing portrait tags untouched.
+## Notes on logo usage
+- Using inline SVG approximations (not the official downloadable HUD/NAR raster files) keeps everything in-repo and avoids licensing/hosting concerns. The marks are universally recognized symbols; the visible text labels ("Equal Housing Opportunity", "REALTOR®") are what actually satisfy the display requirement. If you want the *exact* official artwork, that's a follow-up where I'd download from HUD.gov and NAR and drop them in `public/`.
 
 ## Files touched
-- `src/pages/TrecDisclosures.tsx` (new)
-- `src/pages/PrivacyPolicy.tsx` (new)
-- `src/pages/TermsOfService.tsx` (new)
-- `src/App.tsx` (3 new routes + imports)
-- `src/components/layout/Footer.tsx` (add internal legal links)
-- `public/og-trec.jpg`, `public/og-privacy.jpg`, `public/og-terms.jpg` (new)
-- `public/splash/*-landscape.png` (10 new files)
-- `index.html` (10 new landscape startup-image links)
+- `src/components/layout/Footer.tsx`
