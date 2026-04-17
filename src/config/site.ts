@@ -32,7 +32,13 @@ export const EMILY = {
   photo: "/emily-placeholder.svg",
 } as const;
 
-export const NEIGHBORHOODS = [
+export interface NeighborhoodNav {
+  slug: string;
+  name: string;
+  flagship?: boolean;
+}
+
+export const NEIGHBORHOODS: NeighborhoodNav[] = [
   { slug: "san-antonio", name: "San Antonio", flagship: true },
   { slug: "san-antonio/stone-oak", name: "Stone Oak" },
   { slug: "san-antonio/alamo-ranch", name: "Alamo Ranch" },
@@ -44,7 +50,7 @@ export const NEIGHBORHOODS = [
   { slug: "san-antonio/cibolo", name: "Cibolo" },
   { slug: "san-antonio/new-braunfels", name: "New Braunfels" },
   { slug: "san-antonio/boerne", name: "Boerne" },
-] as const;
+];
 
 export const LOANS = [
   { slug: "fha", name: "FHA Loan", short: "3.5% down" },
