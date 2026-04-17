@@ -12,10 +12,10 @@ export const SITE = {
 export const EMILY = {
   name: "Emily Russell",
   title: "Realtor® — San Antonio, TX",
-  phone: "+1 (210) 555-0142",
-  phoneHref: "tel:+12105550142",
-  email: "emily@rentvsbuyhouse.com",
-  emailHref: "mailto:emily@rentvsbuyhouse.com",
+  phone: "+1 (210) 987-4165",
+  phoneHref: "tel:+12109874165",
+  email: "emily@streamwalkers.com",
+  emailHref: "mailto:emily@streamwalkers.com",
   bio:
     "Emily Russell is a San Antonio Realtor® on a mission to demystify the homebuying process for clients at every price point — from $180K starter homes to multi-million dollar estates. Her approach is zero-pressure, data-first, and built around making sure you understand every dollar before you sign anything.",
   specialties: [
