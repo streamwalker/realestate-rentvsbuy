@@ -8,6 +8,7 @@ const CalculatorPage = () => (
       title="Rent vs. Buy Calculator — San Antonio & Texas"
       description="Free interactive calculator compares the true cost of renting vs. buying in San Antonio, with FHA, VA, USDA, and DPA loan logic built in."
       path="/rent-vs-buy-calculator"
+      image="https://rentvsbuyhouse.com/og-calculator.jpg"
       breadcrumbs={[{ name: "Home", path: "/" }, { name: "Calculator", path: "/rent-vs-buy-calculator" }]}
     />
     <section className="bg-gradient-hero text-cream py-14 md:py-20">
