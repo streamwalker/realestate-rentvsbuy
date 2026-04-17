@@ -1,0 +1,23 @@
+{
+  "name": "Rent vs Buy House — San Antonio",
+  "short_name": "RentVsBuy",
+  "description": "Data-driven rent vs. buy calculator and San Antonio real estate guidance from Emily Russell.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1D3A",
+  "theme_color": "#0B1D3A",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
