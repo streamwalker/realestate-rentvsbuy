@@ -55,24 +55,48 @@ export const Footer = () => {
       </div>
 
       <div className="border-t border-cream/10">
-        <div className="container py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-cream/60">
+        {/* Compliance logo row */}
+        <div className="container pt-6 pb-4 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-cream/70">
+          <span aria-label="Equal Housing Opportunity" title="Equal Housing Opportunity"
+            className="inline-flex items-center gap-2">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+              className="h-7 w-7 text-cream">
+              <rect x="0.5" y="0.5" width="31" height="31" rx="2" fill="none" stroke="currentColor" strokeWidth="1.25" />
+              <path d="M5 16 L16 7 L27 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+              <path d="M8 15 V25 H24 V15" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+              <line x1="11" y1="19" x2="21" y2="19" stroke="currentColor" strokeWidth="1.5" />
+              <line x1="11" y1="22" x2="21" y2="22" stroke="currentColor" strokeWidth="1.5" />
+            </svg>
+            <span>Equal Housing Opportunity</span>
+          </span>
+          <span aria-label="REALTOR®" title="REALTOR®" className="inline-flex items-center gap-2">
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+              className="h-7 w-7">
+              <rect x="0.5" y="0.5" width="31" height="31" rx="3" fill="hsl(var(--gold))" stroke="hsl(var(--gold))" strokeWidth="1" />
+              <path d="M10 24 V8 H17 a4.5 4.5 0 0 1 0 9 H13 M17 17 L23 24"
+                fill="none" stroke="hsl(var(--navy))" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter" />
+            </svg>
+            <span>REALTOR<sup className="text-[8px]">®</sup></span>
+          </span>
+          <span className="text-cream/60">Licensed by the Texas Real Estate Commission</span>
+        </div>
+
+        {/* Disclosure & legal links row */}
+        <div className="container pb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-cream/60 border-t border-cream/10 pt-4">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <span aria-label="Equal Housing Opportunity" title="Equal Housing Opportunity"
-              className="inline-flex items-center gap-1.5">
-              <span className="grid h-5 w-5 place-items-center rounded-sm border border-cream/40 text-[10px]">⌂</span>
-              Equal Housing Opportunity
-            </span>
-            <Link to="/trec-disclosures" className="hover:text-gold">TREC Disclosures</Link>
-            <Link to="/privacy-policy" className="hover:text-gold">Privacy Policy</Link>
-            <Link to="/terms-of-service" className="hover:text-gold">Terms of Service</Link>
+            <span className="text-cream/50 uppercase tracking-wider text-[10px]">Required disclosures:</span>
             <a href="https://www.trec.texas.gov/sites/default/files/pdf-forms/CN%201-3.pdf"
               target="_blank" rel="noopener noreferrer" className="hover:text-gold">
-              TREC Consumer Notice (PDF)
+              TREC Consumer Protection Notice (CN 1-3) [PDF]
             </a>
             <a href="https://www.trec.texas.gov/sites/default/files/pdf-forms/IABS%201-0.pdf"
               target="_blank" rel="noopener noreferrer" className="hover:text-gold">
-              IABS (PDF)
+              Information About Brokerage Services (IABS 1-0) [PDF]
             </a>
+            <span className="text-cream/30">|</span>
+            <Link to="/trec-disclosures" className="hover:text-gold">TREC Disclosures</Link>
+            <Link to="/privacy-policy" className="hover:text-gold">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-gold">Terms of Service</Link>
             <a href="https://alamocitydesigns.com/trec"
               target="_blank" rel="noopener noreferrer" className="hover:text-gold">
               TREC Info (Alamo City Designs)
