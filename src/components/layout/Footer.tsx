@@ -73,6 +73,10 @@ export const Footer = () => {
               target="_blank" rel="noopener noreferrer" className="hover:text-gold">
               IABS (PDF)
             </a>
+            <a href="https://alamocitydesigns.com/trec"
+              target="_blank" rel="noopener noreferrer" className="hover:text-gold">
+              TREC Info (Alamo City Designs)
+            </a>
           </div>
           <div>© {new Date().getFullYear()} {EMILY.name} | {SITE.domain}</div>
         </div>
