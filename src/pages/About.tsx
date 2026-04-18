@@ -19,6 +19,30 @@ const About = () => (
         <p className="text-gold uppercase tracking-wider text-sm font-semibold mb-3">About</p>
         <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight">Meet Emily Russell</h1>
         <p className="text-cream/85 text-lg max-w-2xl mt-4">{EMILY.title}</p>
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <span className="inline-flex items-center gap-2 text-cream/85 text-sm">
+            <img
+              src="/logos/equal-housing-opportunity.png"
+              alt="Equal Housing Opportunity"
+              width={32}
+              height={32}
+              loading="lazy"
+              className="h-8 w-8 object-contain bg-cream rounded-sm p-0.5"
+            />
+            <span>Equal Housing Opportunity</span>
+          </span>
+          <span className="inline-flex items-center gap-2 text-cream/85 text-sm">
+            <img
+              src="/logos/realtor.svg"
+              alt="REALTOR®"
+              width={92}
+              height={32}
+              loading="lazy"
+              className="h-8 w-auto object-contain bg-cream rounded-sm px-1 py-0.5"
+            />
+          </span>
+          <span className="text-cream/70 text-xs">Licensed by the Texas Real Estate Commission</span>
+        </div>
       </div>
     </section>
 
