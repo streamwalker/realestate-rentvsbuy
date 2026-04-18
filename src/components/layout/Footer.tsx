@@ -93,18 +93,14 @@ export const Footer = () => {
               target="_blank" rel="noopener noreferrer" className="hover:text-gold">
               TREC Consumer Protection Notice (CN 1-3) [PDF]
             </a>
-            <a href="https://www.trec.texas.gov/sites/default/files/pdf-forms/IABS%201-0.pdf"
+            <a href="https://alamocitydesigns.com/trec"
               target="_blank" rel="noopener noreferrer" className="hover:text-gold">
-              Information About Brokerage Services (IABS 1-0) [PDF]
+              Information About Brokerage Services (IABS 1-0)
             </a>
             <span className="text-cream/30">|</span>
             <Link to="/trec-disclosures" className="hover:text-gold">TREC Disclosures</Link>
             <Link to="/privacy-policy" className="hover:text-gold">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-gold">Terms of Service</Link>
-            <a href="https://alamocitydesigns.com/trec"
-              target="_blank" rel="noopener noreferrer" className="hover:text-gold">
-              TREC Info (Alamo City Designs)
-            </a>
           </div>
           <div>© {new Date().getFullYear()} {EMILY.name} | {SITE.domain}</div>
         </div>
