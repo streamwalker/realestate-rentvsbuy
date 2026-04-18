@@ -30,6 +30,8 @@ export const EMILY = {
   calendly: "https://calendly.com/",
   // TODO: replace with real photo
   photo: "/emily-placeholder.svg",
+  // TODO: replace with Emily's real TREC license number
+  trecLicense: "#0000000",
 } as const;
 
 export interface NeighborhoodNav {

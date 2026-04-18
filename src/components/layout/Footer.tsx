@@ -78,7 +78,11 @@ export const Footer = () => {
             </svg>
             <span>REALTOR<sup className="text-[8px]">®</sup></span>
           </span>
-          <span className="text-cream/60">Licensed by the Texas Real Estate Commission</span>
+          <span className="text-cream/60">
+            Licensed by the Texas Real Estate Commission
+            <span className="mx-2 text-cream/30">|</span>
+            <span className="text-cream/70">TREC License {EMILY.trecLicense}</span>
+          </span>
         </div>
 
         {/* Disclosure & legal links row */}
