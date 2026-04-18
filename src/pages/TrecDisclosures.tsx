@@ -3,8 +3,7 @@ import { SITE, EMILY } from "@/config/site";
 
 const TREC_CONSUMER_NOTICE_URL =
   "https://www.trec.texas.gov/sites/default/files/pdf-forms/CN%201-3.pdf";
-const TREC_IABS_URL =
-  "https://www.trec.texas.gov/sites/default/files/pdf-forms/IABS%201-0.pdf";
+const TREC_IABS_URL = "https://alamocitydesigns.com/trec";
 
 const TrecDisclosures = () => {
   return (
@@ -80,7 +79,7 @@ const TrecDisclosures = () => {
               rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-2 rounded-md bg-navy px-4 py-2 text-sm font-semibold text-cream hover:bg-navy/90 transition-smooth"
             >
-              View Information About Brokerage Services (PDF) →
+              View Information About Brokerage Services →
             </a>
           </div>
 
