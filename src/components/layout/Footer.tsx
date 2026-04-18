@@ -57,26 +57,26 @@ export const Footer = () => {
       <div className="border-t border-cream/10">
         {/* Compliance logo row */}
         <div className="container pt-6 pb-4 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-cream/70">
-          <span aria-label="Equal Housing Opportunity" title="Equal Housing Opportunity"
-            className="inline-flex items-center gap-2">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-              className="h-7 w-7 text-cream">
-              <rect x="0.5" y="0.5" width="31" height="31" rx="2" fill="none" stroke="currentColor" strokeWidth="1.25" />
-              <path d="M5 16 L16 7 L27 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-              <path d="M8 15 V25 H24 V15" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-              <line x1="11" y1="19" x2="21" y2="19" stroke="currentColor" strokeWidth="1.5" />
-              <line x1="11" y1="22" x2="21" y2="22" stroke="currentColor" strokeWidth="1.5" />
-            </svg>
+          <span className="inline-flex items-center gap-2">
+            <img
+              src="/logos/equal-housing-opportunity.png"
+              alt="Equal Housing Opportunity"
+              width={28}
+              height={28}
+              loading="lazy"
+              className="h-7 w-7 object-contain bg-cream rounded-sm p-0.5"
+            />
             <span>Equal Housing Opportunity</span>
           </span>
-          <span aria-label="REALTOR®" title="REALTOR®" className="inline-flex items-center gap-2">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-              className="h-7 w-7">
-              <rect x="0.5" y="0.5" width="31" height="31" rx="3" fill="hsl(var(--gold))" stroke="hsl(var(--gold))" strokeWidth="1" />
-              <path d="M10 24 V8 H17 a4.5 4.5 0 0 1 0 9 H13 M17 17 L23 24"
-                fill="none" stroke="hsl(var(--navy))" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter" />
-            </svg>
-            <span>REALTOR<sup className="text-[8px]">®</sup></span>
+          <span className="inline-flex items-center gap-2">
+            <img
+              src="/logos/realtor.svg"
+              alt="REALTOR®"
+              width={80}
+              height={28}
+              loading="lazy"
+              className="h-7 w-auto object-contain bg-cream rounded-sm px-1 py-0.5"
+            />
           </span>
           <span className="text-cream/60">
             Licensed by the Texas Real Estate Commission
