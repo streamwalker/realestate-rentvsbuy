@@ -1,0 +1,1 @@
+drop policy if exists "Anyone can submit leads" on public.leads;
