@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { to: "/rent-vs-buy-calculator", label: "Calculator" },
+  { to: "/resale-vs-new", label: "Resale vs. New" },
   { to: "/loans/va", label: "Loans" },
   { to: "/san-antonio", label: "Neighborhoods" },
   { to: "/first-time-buyer-guide", label: "Resources" },
@@ -29,7 +30,7 @@ export const Header = () => {
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((l) => (
             <RouterNavLink
               key={l.to}
@@ -51,7 +52,7 @@ export const Header = () => {
 
         <button
           aria-label={open ? "Close menu" : "Open menu"}
-          className="md:hidden p-2 -mr-2 rounded-md hover:bg-muted"
+          className="lg:hidden p-2 -mr-2 rounded-md hover:bg-muted"
           onClick={() => setOpen(!open)}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -59,7 +60,7 @@ export const Header = () => {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-border bg-background animate-fade-in">
+        <div className="lg:hidden border-t border-border bg-background animate-fade-in">
           <nav className="container flex flex-col py-3">
             {navLinks.map((l) => (
               <RouterNavLink

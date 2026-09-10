@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import ResaleVsNewPage from "./pages/ResaleVsNewPage";
 import CalculatorPage from "./pages/CalculatorPage";
 import LoanGuidePage from "./pages/LoanGuidePage";
 import NeighborhoodPage from "./pages/NeighborhoodPage";
@@ -32,6 +33,7 @@ const App = () => (
           <SiteLayout>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/resale-vs-new" element={<ResaleVsNewPage />} />
               <Route path="/rent-vs-buy-calculator" element={<CalculatorPage />} />
 
               {/* Loan guides */}
