@@ -1,1 +1,4 @@
 project_id = "fciywamdancglsoylblo"
+
+[functions.import-home-listing]
+verify_jwt = false
