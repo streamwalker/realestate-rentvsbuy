@@ -1,0 +1,21 @@
+{
+  "name": "Resale vs. New Construction",
+  "short_name": "Resale vs New",
+  "start_url": "/resale-vs-new",
+  "scope": "/resale-vs-new",
+  "display": "browser",
+  "theme_color": "#0b1d32",
+  "background_color": "#0b1d32",
+  "icons": [
+    {
+      "src": "/share/resale-vs-new/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/share/resale-vs-new/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

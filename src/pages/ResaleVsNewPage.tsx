@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { PageHead } from "@/components/PageHead";
+import { Helmet } from "react-helmet-async";
+import { breadcrumbSchema, realEstateAgentSchema, websiteSchema, speakableSchema } from "@/lib/schema";
+import share from "@/config/resale-share.json";
 import "./resale-comparison-bar.css";
 
 type Totals = { piti: number; cash: number; monthly: number };
@@ -39,10 +41,36 @@ export default function ResaleVsNewPage() {
     };
   }, []);
   return <>
-    <PageHead title="Resale vs. New Construction — Compare Home Costs"
-      description="Compare resale and new construction side by side: cash to move in, monthly payments, financing, warranties and energy upgrades. Save or print your comparison."
-      path="/resale-vs-new"
-      breadcrumbs={[{name:"Home",path:"/"},{name:"Resale vs. New",path:"/resale-vs-new"}]} />
+    <Helmet>
+      <title>{share.title}</title>
+      <meta name="description" content={share.description} />
+      <link rel="canonical" href={share.url} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={share.title} />
+      <meta property="og:description" content={share.description} />
+      <meta property="og:url" content={share.url} />
+      <meta property="og:site_name" content="rentvsbuyhouse.com" />
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:image" content={share.image} />
+      <meta property="og:image:secure_url" content={share.image} />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={share.imageAlt} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={share.title} />
+      <meta name="twitter:description" content={share.description} />
+      <meta name="twitter:image" content={share.image} />
+      <meta name="twitter:image:alt" content={share.imageAlt} />
+      <meta name="theme-color" content="#0b1d32" />
+      <meta name="apple-mobile-web-app-title" content="Resale vs New" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/share/resale-vs-new/favicon-32.png" />
+      <link rel="icon" type="image/png" sizes="192x192" href="/share/resale-vs-new/icon-192.png" />
+      <link rel="icon" type="image/png" sizes="512x512" href="/share/resale-vs-new/icon-512.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/share/resale-vs-new/apple-touch-icon.png" />
+      <link rel="manifest" href="/share/resale-vs-new/site.webmanifest" />
+      {[websiteSchema, realEstateAgentSchema, speakableSchema, breadcrumbSchema([{name:"Home",path:"/"},{name:"Resale vs. New",path:"/resale-vs-new"}])].map((schema,i)=><script key={i} type="application/ld+json">{JSON.stringify(schema)}</script>)}
+    </Helmet>
     {visible && <aside className="comparison-glass" style={{ top: headerHeight }} aria-label="Live home comparison totals">
       <div className="comparison-glass-grid">
         {["Resale home", "New construction"].map((label, i) => <section key={label} className="comparison-glass-side" aria-label={label}>
