@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
@@ -23,8 +23,11 @@ import TermsOfService from "./pages/TermsOfService";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <HelmetProvider>
+// Route defaults must not compete with the comparison page's dedicated icons.
+const DefaultBranding = () => {
+  const { pathname } = useLocation();
+  if (pathname.replace(/\/$/, "") === "/resale-vs-new") return null;
+  return (
     <Helmet>
       <meta name="theme-color" content="#0B1D3A" />
       <meta name="apple-mobile-web-app-title" content="RentVsBuy" />
@@ -34,11 +37,18 @@ const App = () => (
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/site.webmanifest" />
     </Helmet>
+  );
+};
+
+const App = () => (
+  <HelmetProvider>
+
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <DefaultBranding />
           <SiteLayout>
             <Routes>
               <Route path="/" element={<Index />} />
