@@ -3,3 +3,9 @@
 let previousHeight=0;
 const reportHeight=()=>{const height=Math.ceil(document.body.getBoundingClientRect().height);if(height===previousHeight)return;previousHeight=height;if(parent!==window)parent.postMessage({type:'homecompare:height',height},location.origin);};
 window.addEventListener('load',()=>{new ResizeObserver(reportHeight).observe(document.body);reportHeight();});
+
+// Only totals cross this same-origin boundary; no listing or personal data is sent.
+let latestTotals=null;
+const sendTotals=()=>{if(parent!==window)parent.postMessage({type:'homecompare:totals',totals:latestTotals},location.origin);};
+window.addEventListener('homecompare:totals',event=>{latestTotals=event.detail;sendTotals();});
+window.addEventListener('message',event=>{if(event.source===parent&&event.origin===location.origin&&event.data?.type==='homecompare:request-totals')sendTotals();});
